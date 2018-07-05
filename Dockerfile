@@ -8,11 +8,11 @@ ARG NEXUS_DOWNLOAD_URL=https://download.sonatype.com/nexus/oss/nexus-${NEXUS_VER
 ENV SONATYPE_DATA /nexus-data
 ENV SONATYPE_APP /nexus-app
 
-RUN apk add --no-cache \
-      ca-certificates \
-      curl
-
 RUN set -eux; \
+    apk add --no-cache \
+      ca-certificates \
+      curl \
+    ; \
     mkdir -p $SONATYPE_DATA; \
     mkdir -p $SONATYPE_APP; \
     curl -fSL "$NEXUS_DOWNLOAD_URL" \
