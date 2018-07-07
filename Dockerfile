@@ -18,7 +18,7 @@ RUN set -eux; \
     curl -fSL "$NEXUS_DOWNLOAD_URL" \
       | tar zxf - -C $SONATYPE_APP --strip-components=1 nexus-$NEXUS_VERSION; \
     \
-    addgroup nexus; \
+    addgroup -g 1000 nexus; \
     adduser -D -u 1000 -h $SONATYPE_DATA -G nexus nexus; \
     chown -R nexus:nexus $SONATYPE_DATA $SONATYPE_APP
 
