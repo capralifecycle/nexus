@@ -1,6 +1,6 @@
 # inspiration:
 # - https://github.com/sonatype/docker-nexus/blob/master/oss/Dockerfile
-FROM openjdk:8-jre-alpine@sha256:5c5867cd2d4d198d1e53562c8202dfa388832b6f7d8276e69eae212b326c7777
+FROM openjdk:8-jre-alpine@sha256:22b74f5804d7ac45dfbe8e860a4bcb49d33a4a943b681c3fc78f103ff31829ea
 
 ARG NEXUS_VERSION=2.14.12-02
 ARG NEXUS_DOWNLOAD_URL=https://download.sonatype.com/nexus/oss/nexus-${NEXUS_VERSION}-bundle.tar.gz
