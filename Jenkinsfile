@@ -40,8 +40,9 @@ buildConfig([
     def isSameImage = dockerPushCacheImage(img, lastImageId)
 
     stage('Test build') {
-      docker.image('docker').inside {
-        sh "./test.sh ${img.id}"
+      insideToolImage("node:14") {
+        sh "npm ci"
+        sh "npm run test-image -- ${img.id}"
       }
     }
 
