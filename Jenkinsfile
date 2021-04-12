@@ -34,7 +34,7 @@ buildConfig([
       if (params.docker_skip_cache) {
         args = " --no-cache"
       }
-      img = docker.build(dockerImageName, "--cache-from $lastImageId$args --pull .")
+      img = docker.build(dockerImageName, "--cache-from $lastImageId$args .")
     }
 
     def isSameImage = dockerPushCacheImage(img, lastImageId)
