@@ -2,7 +2,7 @@
 # - https://github.com/sonatype/docker-nexus/blob/master/oss/Dockerfile
 FROM azul/zulu-openjdk-alpine:8-jre@sha256:2ec2f814eb285aafb089f1395ad69fcb85b8ae70321ece2f7838e2d16b520dc2
 
-ARG NEXUS_VERSION=2.14.21-02
+ARG NEXUS_VERSION=2.15.1-02
 ARG NEXUS_DOWNLOAD_URL=https://download.sonatype.com/nexus/oss/nexus-${NEXUS_VERSION}-bundle.tar.gz
 
 ENV SONATYPE_DATA /nexus-data
@@ -32,7 +32,7 @@ ENV CONTEXT_PATH /
 ENV MAX_HEAP 768m
 ENV MIN_HEAP 256m
 ENV JAVA_OPTS -server -Djava.net.preferIPv4Stack=true
-ENV LAUNCHER_CONF ./conf/jetty.xml ./conf/jetty-requestlog.xml
+ENV LAUNCHER_CONF ./conf/jetty.xml ./conf/jetty-requestlog.xml ./conf/jetty-http.xml
 
 CMD java \
   -Dnexus-work=${SONATYPE_DATA} \
