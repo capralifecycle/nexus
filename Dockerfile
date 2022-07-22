@@ -1,6 +1,6 @@
 # inspiration:
 # - https://github.com/sonatype/docker-nexus/blob/master/oss/Dockerfile
-FROM azul/zulu-openjdk-alpine:8-jre@sha256:3b179b0059c66e73d080884cf81b58bbba7d6e3a359c368dd6065b38f9adcc27
+FROM azul/zulu-openjdk-alpine:8-jre@sha256:2e2e5d24310783198987e1485b7373c84e451a0a8b57f7f0965189dabfdb9478
 
 ARG NEXUS_VERSION=2.15.1-02
 ARG NEXUS_DOWNLOAD_URL=https://download.sonatype.com/nexus/oss/nexus-${NEXUS_VERSION}-bundle.tar.gz
